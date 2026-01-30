@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "fitness_meta_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^[0-9A-HJKMNP-TV-Z]{26}$"
+    },
+    "participant_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "file_name": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "source": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "file_format": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "fitness_meta_id",
+    "participant_id",
+    "file_name",
+    "source",
+    "file_format"
+  ]
+}

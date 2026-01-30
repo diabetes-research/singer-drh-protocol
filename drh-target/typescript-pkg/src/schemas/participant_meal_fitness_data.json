@@ -1,0 +1,73 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "db_file_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^[0-9A-HJKMNP-TV-Z]{26}$"
+    },
+    "tenant_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "study_display_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "fitness_meal_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "participant_display_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "meal_data": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "fitness_data": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "fitness_file_metadata": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "meal_file_metadata": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "db_file_id",
+    "tenant_id",
+    "study_display_id",
+    "fitness_meal_id",
+    "participant_display_id",
+    "meal_data",
+    "fitness_data",
+    "fitness_file_metadata",
+    "meal_file_metadata"
+  ]
+}

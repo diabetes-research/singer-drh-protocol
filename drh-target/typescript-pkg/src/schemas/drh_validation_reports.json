@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "timestamp": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "folder_name": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "tenant_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "tenant_name": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "overall_status": {
+      "type": "string"
+    },
+    "report_json": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "timestamp",
+    "folder_name",
+    "tenant_id",
+    "tenant_name",
+    "overall_status",
+    "report_json"
+  ]
+}

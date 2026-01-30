@@ -1,0 +1,81 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "study_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "study_name": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "start_date": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "end_date": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "treatment_modalities": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "funding_source": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "nct_number": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "study_description": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "tenant_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "tenant_name": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "study_id",
+    "study_name",
+    "start_date",
+    "end_date",
+    "treatment_modalities",
+    "funding_source",
+    "nct_number",
+    "study_description",
+    "tenant_id",
+    "tenant_name"
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "participant_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "study_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "site_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "diagnosis_icd": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "med_rxnorm": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "treatment_modality": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "gender": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "race_ethnicity": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "age": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "bmi": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "baseline_hba1c": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "diabetes_type": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "study_arm": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "tenant_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "tenant_name": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "participant_id",
+    "study_id",
+    "site_id",
+    "diagnosis_icd",
+    "med_rxnorm",
+    "treatment_modality",
+    "gender",
+    "race_ethnicity",
+    "age",
+    "bmi",
+    "baseline_hba1c",
+    "diabetes_type",
+    "study_arm",
+    "tenant_id",
+    "tenant_name"
+  ]
+}

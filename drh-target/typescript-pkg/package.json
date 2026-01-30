@@ -1,0 +1,19 @@
+{
+  "name": "@drh/target-schemas",
+  "version": "1.0.0",
+  "description": "Shared JSON schemas for DRH validation",
+  "main": "dist/loader.js",
+  "types": "dist/loader.d.ts",
+  "scripts": {
+    "build": "tsc && cp -r src/schemas dist/",
+    "test": "echo \"Error: no test info\" && exit 1"
+  },
+  "devDependencies": {
+    "@types/node": "^25.1.0",
+    "typescript": "^5.0.0"
+  },
+  "files": [
+    "dist",
+    "src/schemas"
+  ]
+}

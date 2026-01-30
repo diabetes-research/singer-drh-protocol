@@ -1,0 +1,46 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "file_meta_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^[0-9A-HJKMNP-TV-Z]{26}$"
+    },
+    "db_file_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^[0-9A-HJKMNP-TV-Z]{26}$"
+    },
+    "participant_display_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "file_meta_data": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "cgm_data": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "file_meta_id",
+    "db_file_id",
+    "participant_display_id",
+    "file_meta_data",
+    "cgm_data"
+  ]
+}

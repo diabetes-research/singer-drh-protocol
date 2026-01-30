@@ -1,0 +1,58 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "publication_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "publication_title": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "digital_object_identifier": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "publication_site": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "study_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "tenant_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "tenant_name": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "publication_id",
+    "publication_title",
+    "digital_object_identifier",
+    "publication_site",
+    "study_id",
+    "tenant_id",
+    "tenant_name"
+  ]
+}

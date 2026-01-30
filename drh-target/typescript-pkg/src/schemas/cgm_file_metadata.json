@@ -1,0 +1,123 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "metadata_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "devicename": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "device_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "source_platform": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "patient_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "file_name": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "file_format": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "file_upload_date": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}$"
+    },
+    "data_start_date": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}$"
+    },
+    "data_end_date": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}$"
+    },
+    "map_field_of_cgm_date": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "map_field_of_cgm_value": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "study_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "map_field_of_patient_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "tenant_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "tenant_name": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "metadata_id",
+    "devicename",
+    "source_platform",
+    "patient_id",
+    "file_name",
+    "file_format",
+    "map_field_of_cgm_date",
+    "map_field_of_cgm_value",
+    "study_id",
+    "map_field_of_patient_id",
+    "tenant_id",
+    "tenant_name"
+  ]
+}
