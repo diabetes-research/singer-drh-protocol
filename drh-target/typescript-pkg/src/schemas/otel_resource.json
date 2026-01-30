@@ -1,0 +1,13 @@
+{
+ "type": "object",
+ "required": ["resource_id", "service.name", "service.instance.id"],
+ "properties": {
+  "resource_id": { "type": "string" },
+  "service.name": { "type": "string" },
+  "service.version": { "type": "string" },
+  "service.instance.id": { "type": "string" },
+  "deployment.environment": { "type": "string" },
+  "singer.role": { "type": "string", "enum": ["tap", "target"] },
+  "singer.stream": { "type": "string" }
+ }
+}

@@ -1,0 +1,16 @@
+{
+ "type": "object",
+ "required": ["name", "time_unix_nano", "value"],
+ "properties": {
+  "name": { "type": "string" },
+  "description": { "type": "string" },
+  "unit": { "type": "string" },
+  "time_unix_nano": { "type": "integer" },
+  "value": { "type": "number" },
+  "attributes": {
+   "type": "object",
+   "additionalProperties": true
+  },
+  "resource_id": { "type": "string" }
+ }
+}
