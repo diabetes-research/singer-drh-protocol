@@ -1,0 +1,26 @@
+{
+ "type": "object",
+ "required": ["trace_id", "span_id", "name", "start_time_unix_nano"],
+ "properties": {
+  "trace_id": { "type": "string" },
+  "span_id": { "type": "string" },
+  "parent_span_id": { "type": "string" },
+  "name": { "type": "string" },
+  "kind": {
+   "type": "string",
+   "enum": ["INTERNAL", "SERVER", "CLIENT"]
+  },
+  "start_time_unix_nano": { "type": "integer" },
+  "end_time_unix_nano": { "type": "integer" },
+  "status_code": {
+   "type": "string",
+   "enum": ["OK", "ERROR"]
+  },
+  "status_message": { "type": "string" },
+  "attributes": {
+   "type": "object",
+   "additionalProperties": true
+  },
+  "resource_id": { "type": "string" }
+ }
+}

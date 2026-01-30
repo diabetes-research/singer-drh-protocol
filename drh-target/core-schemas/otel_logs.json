@@ -1,0 +1,20 @@
+{
+ "type": "object",
+ "required": ["time_unix_nano", "severity_text", "body"],
+ "properties": {
+  "time_unix_nano": { "type": "integer" },
+  "trace_id": { "type": "string" },
+  "span_id": { "type": "string" },
+  "severity_number": { "type": "integer" },
+  "severity_text": {
+   "type": "string",
+   "enum": ["DEBUG", "INFO", "WARN", "ERROR", "FATAL"]
+  },
+  "body": { "type": "string" },
+  "attributes": {
+   "type": "object",
+   "additionalProperties": true
+  },
+  "resource_id": { "type": "string" }
+ }
+}
