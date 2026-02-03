@@ -5,7 +5,8 @@
       "type": [
         "string",
         "null"
-      ]
+      ],
+      "pattern": "^[A-Z0-9][A-Z0-9-]{1,12}[A-Z0-9]$"
     },
     "publication_title": {
       "type": [
@@ -29,7 +30,9 @@
       "type": [
         "string",
         "null"
-      ]
+      ],
+      "$ref": "study.json#/properties/study_id",
+      "pattern": "^[A-Z0-9]{4,6}$"
     },
     "tenant_id": {
       "type": [

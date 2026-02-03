@@ -5,7 +5,8 @@
       "type": [
         "string",
         "null"
-      ]
+      ],
+      "pattern": "^[A-Z0-9]{4,6}$"
     },
     "study_name": {
       "type": [
@@ -18,14 +19,14 @@
         "string",
         "null"
       ],
-      "format": "date-time"
+      "format": "date"
     },
     "end_date": {
       "type": [
         "string",
         "null"
       ],
-      "format": "date-time"
+      "format": "date"
     },
     "treatment_modalities": {
       "type": [

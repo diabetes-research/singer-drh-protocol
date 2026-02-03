@@ -5,8 +5,7 @@
       "type": [
         "string",
         "null"
-      ],
-      "pattern": "^[0-9A-HJKMNP-TV-Z]{26}$"
+      ]      
     },
     "tenant_id": {
       "type": [
@@ -18,7 +17,9 @@
       "type": [
         "string",
         "null"
-      ]
+      ] ,
+      "$ref": "study.json#/properties/study_id",
+      "pattern": "^[A-Z0-9]{4,6}$"
     },
     "fitness_meal_id": {
       "type": [
@@ -30,7 +31,8 @@
       "type": [
         "string",
         "null"
-      ]
+      ],
+      "pattern": "^[A-Z0-9][A-Z0-9-]{1,12}[A-Z0-9]$"
     },
     "meal_data": {
       "type": [

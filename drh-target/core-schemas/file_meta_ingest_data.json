@@ -5,21 +5,20 @@
       "type": [
         "string",
         "null"
-      ],
-      "pattern": "^[0-9A-HJKMNP-TV-Z]{26}$"
+      ]      
     },
     "db_file_id": {
       "type": [
         "string",
         "null"
-      ],
-      "pattern": "^[0-9A-HJKMNP-TV-Z]{26}$"
+      ]
     },
     "participant_display_id": {
       "type": [
         "string",
         "null"
-      ]
+      ],
+      "pattern": "^[A-Z0-9][A-Z0-9-]{1,12}[A-Z0-9]$"
     },
     "file_meta_data": {
       "type": [

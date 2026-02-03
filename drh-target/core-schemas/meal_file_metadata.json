@@ -6,13 +6,15 @@
         "string",
         "null"
       ],
-      "pattern": "^[0-9A-HJKMNP-TV-Z]{26}$"
+      "pattern": "^[A-Z0-9][A-Z0-9-]{1,12}[A-Z0-9]$"
     },
     "participant_id": {
       "type": [
         "string",
         "null"
-      ]
+      ],
+      "$ref": "participant.json#/properties/participant_id",
+      "pattern": "^[A-Z0-9][A-Z0-9-]{1,12}[A-Z0-9]$"
     },
     "file_name": {
       "type": [
