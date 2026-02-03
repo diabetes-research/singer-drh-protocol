@@ -48,24 +48,24 @@
         "string",
         "null"
       ],
-      "format": "date-time",
-      "pattern": "^\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}$"
+      "format": "date",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
     },
     "data_start_date": {
       "type": [
         "string",
         "null"
       ],
-      "format": "date-time",
-      "pattern": "^\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}$"
+      "format": "date",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
     },
     "data_end_date": {
       "type": [
         "string",
         "null"
       ],
-      "format": "date-time",
-      "pattern": "^\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}$"
+      "format": "date",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
     },
     "map_field_of_cgm_date": {
       "type": [
