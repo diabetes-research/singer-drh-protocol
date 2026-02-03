@@ -18,8 +18,7 @@
       "type": [
         "string",
         "null"
-      ],
-      "pattern": "^[A-Z0-9][A-Z0-9-]{1,12}[A-Z0-9]$"
+      ]      
     },
     "institution_id": {
       "type": [
