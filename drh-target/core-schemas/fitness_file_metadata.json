@@ -26,6 +26,13 @@
       "type": [
         "string",
         "null"
+      ],
+      "enum": [
+        "Apple Watch",
+        "Fitbit",
+        "Garmin",
+        "Oura Ring",        
+        null
       ]
     },
     "file_format": {

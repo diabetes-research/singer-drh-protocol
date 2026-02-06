@@ -26,6 +26,13 @@
       "type": [
         "string",
         "null"
+      ],
+      "enum": [
+        "MyFitnessPal",
+        "Lose It",
+        "Cronometer",
+        "FatSecret",        
+        null
       ]
     },
     "file_format": {
