@@ -148,12 +148,11 @@ When data is processed through a DRH Singer tap, every validation step is tracke
 
 The DRH tap uses a structured naming system for observability:
 
-![observability](observability.png)
+![observability](/drh-target/assetsobservability.png)
 
 #### **1. Traces (Validation Workflow)**
 
 Traces show the complete journey of data through the validation pipeline:
-
 
 ![trace-validation-flow](/drh-target/assets/trace-validation-flow.png)
 
@@ -268,7 +267,7 @@ The DRH protocol has been **validated and tested** with:
 |--------|--------|-------------|------------------|
 | **CSV** | ✅ **Production Ready** | Comma-separated values | CGM exports, participant demographics, meal logs, fitness data |
 
-**Reference Implementation**: The sample tap in the [drh-edge repository](https://github.com/diabetes-research/spry-drh-edge-platform/drh-edge-core/singer-tap) demonstrates complete CSV processing with all 10 validation checks.
+**Reference Implementation**: The sample tap in the [drh-edge repository](https://github.com/diabetes-research/spry-drh-edge-platform/) demonstrates complete CSV processing with all 10 validation checks.Refer the folder `drh-edge-core/singer-tap`.
 
 #### Theoretically Supported (Untested)
 
@@ -295,13 +294,13 @@ It will integrate with the DRH ecosystem. However, **each new format requires cu
 
 If you need to process formats other than CSV:
 
-**Step 1: Assess Feasibility**
+**1: Assess Feasibility**
 
 - Can you programmatically read the format in Python?
 - Can you map the source fields to DRH schema fields?
 - Is the data structured or unstructured?
 
-**Step 2: Create a Custom Tap**
+**2: Create a Custom Tap**
 
 - Copy the CSV tap as a template
 - Replace the CSV reading logic with your format's reader
@@ -342,9 +341,9 @@ The DRH schema defines the structure and validation rules for diabetes research 
 | `cgm_file_metadata` | CGM file descriptors | file_name, patient_id, device_name, start_date, end_date |
 | `cgm_tracing` | Raw CGM glucose readings | timestamp, glucose_value, patient_id |
 | `meal_file_metadata` | Meal log descriptors | file_name, patient_id, meal_count |
-| `meal_data` | Meal logging data | timestamp, meal_type, patient_id |
+| `meal` | Meal logging data | timestamp, meal_type, patient_id |
 | `fitness_file_metadata` | Activity data descriptors | file_name, patient_id, activity_count |
-| `fitness_data` | Exercise and activity logs | timestamp, activity_type, duration, patient_id |
+| `fitness` | Exercise and activity logs | timestamp, activity_type, duration, patient_id |
 
 ### Writing Your Own Singer Tap
 
@@ -832,14 +831,14 @@ Click any link below to open an **interactive, dynamic visualization** of the sc
 | Stream | Description | Interactive Visualization |
 |--------|-------------|---------------------------|
 | **Meal File Metadata** | Meal logging file descriptors | [🔗 View Schema](https://jsoncrack.com/editor?json=https://raw.githubusercontent.com/diabetes-research/singer-drh-protocol/main/drh-target/python-pkg/src/drh_target/schemas/meal_file_metadata.json) |
-| **Meal Data** | Meal composition and timing | [🔗 View Schema](https://jsoncrack.com/editor?json=https://raw.githubusercontent.com/diabetes-research/singer-drh-protocol/main/drh-target/python-pkg/src/drh_target/schemas/meal_data.json) |
+| **Meal** | Meal composition and timing | [🔗 View Schema](https://jsoncrack.com/editor?json=https://raw.githubusercontent.com/diabetes-research/singer-drh-protocol/main/drh-target/python-pkg/src/drh_target/schemas/meal.json) |
 
 #### Fitness Data Schemas
 
 | Stream | Description | Interactive Visualization |
 |--------|-------------|---------------------------|
 | **Fitness File Metadata** | Physical activity file descriptors | [🔗 View Schema](https://jsoncrack.com/editor?json=https://raw.githubusercontent.com/diabetes-research/singer-drh-protocol/main/drh-target/python-pkg/src/drh_target/schemas/fitness_file_metadata.json) |
-| **Fitness Data** | Exercise and activity logs | [🔗 View Schema](https://jsoncrack.com/editor?json=https://raw.githubusercontent.com/diabetes-research/singer-drh-protocol/main/drh-target/python-pkg/src/drh_target/schemas/fitness_data.json) |
+| **Fitness** | Exercise and activity logs | [🔗 View Schema](https://jsoncrack.com/editor?json=https://raw.githubusercontent.com/diabetes-research/singer-drh-protocol/main/drh-target/python-pkg/src/drh_target/schemas/fitness.json) |
 
 #### OpenTelemetry Schemas
 
