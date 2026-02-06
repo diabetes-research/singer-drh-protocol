@@ -12,6 +12,29 @@
       "type": [
         "string",
         "null"
+      ],
+      "enum": [
+        "Freestyle Libre",
+        "Clarity",
+        "Carelink",
+        "Tidepool",
+        "Dexcom G4",
+        "Dexcom G5",
+        "Dexcom G6",
+        "Dexcom G7",
+        "Stelo",
+        "FreeStyle Libre 2",
+        "FreeStyle Libre 3",
+        "FreeStyle Libre Pro",
+        "Guardian Connect",
+        "Simplera CGM System",
+        "Eversense",
+        "Eversense XL",
+        "Eversense E3",
+        "Eversense 365",
+        "FreeStyle Navigator",
+        "Medtronic Paradigm",
+        null
       ]
     },
     "device_id": {
@@ -24,6 +47,14 @@
       "type": [
         "string",
         "null"
+      ],
+      "enum": [
+        "Abbott",
+        "Dexcom",
+        "Medtronic",
+        "Tidepool",
+        "Senseonics",
+        null
       ]
     },
     "patient_id": {

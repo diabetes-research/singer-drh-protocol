@@ -45,12 +45,32 @@
       "type": [
         "string",
         "null"
+      ],
+      "enum": ["Male", "Female", "Other", "Unknown",null]
+    },
+    "race": {
+      "type": ["string", "null"],
+      "enum": [
+        "American Indian or Alaska Native",
+        "American Indian",
+        "Asian",
+        "White",
+        "Black or African American",
+        "Black",
+        "Native Hawaiian or Other Pacific Islander",
+        "Native Hawaiian",    
+        "Unknown",
+        null 
       ]
     },
-    "race_ethnicity": {
-      "type": [
-        "string",
-        "null"
+    "ethnicity": {
+      "type": ["string", "null"],
+      "enum": [
+        "Hispanic or Latino",
+        "Not Hispanic or Latino",
+        "Asked but unknown",
+        "Unknown",
+        null
       ]
     },
     "age": {

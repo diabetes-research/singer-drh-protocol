@@ -44,7 +44,8 @@
       "type": [
         "string",
         "null"
-      ]
+      ],
+      "pattern": "^NCT[0-9]{8}$"
     },
     "study_description": {
       "type": [

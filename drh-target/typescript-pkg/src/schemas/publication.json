@@ -18,7 +18,8 @@
       "type": [
         "string",
         "null"
-      ]
+      ],
+      "pattern": "^10\\.\\d{4,9}/[-._;()/:a-zA-Z0-9]+$"
     },
     "publication_site": {
       "type": [
