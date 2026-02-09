@@ -12,12 +12,11 @@
 
 - [What is Singer?](#what-is-singer)
 - [OpenTelemetry Schema and Validation Logging](#opentelemetry-schema-and-validation-logging)
+- [Interactive Schema Visualization](#interactive-schema-visualization)
 - [Data Preparation for Researchers](#data-preparation-for-researchers)
 - [Python Implementation Guide](#python-implementation-guide)
-- [Interactive Schema Visualization](#interactive-schema-visualization)
 - [Installation](#installation)
-- [Contributing](#contributing)
-
+  
 ---
 
 ## What is Singer?
@@ -148,7 +147,7 @@ When data is processed through a DRH Singer tap, every validation step is tracke
 
 The DRH tap uses a structured naming system for observability:
 
-![observability](/drh-target/assetsobservability.png)
+![observability](/drh-target/assets/observability.png)
 
 #### **1. Traces (Validation Workflow)**
 
@@ -253,6 +252,99 @@ OpenTelemetry validation logging provides:
 
 ---
 
+## Interactive Schema Visualization
+
+The DRH Protocol schemas are complex, with nested structures and relationships. We provide **interactive visualizations** using [JSON Crack](https://jsoncrack.com/) to help researchers explore schema definitions visually.
+
+### What is JSON Crack?
+
+JSON Crack is an open-source online tool that renders JSON schemas as interactive tree-graph diagrams. You can:
+
+- ✅ Expand/collapse nested structures  
+- ✅ See field types and constraints at a glance  
+- ✅ Navigate relationships between schemas  
+- ✅ Export visualizations as PNG, JPEG, or SVG  
+- ✅ Share links with collaborators  
+
+### Magic Links to Schema Visualizations
+
+Click any link below to open an **interactive, dynamic visualization** of the schema. These links load schemas directly from GitHub's raw content, so they automatically update when schema files change.
+
+> **Note**: Links open JSON Crack with the schema pre-loaded. If a visualization doesn't appear, the schema file may not exist yet in the repository, or you may need to manually paste the raw GitHub URL into [jsoncrack.com/editor](https://jsoncrack.com/editor).
+
+#### Core Research Data Schemas
+
+| Stream | Description | Interactive Visualization |
+|--------|-------------|---------------------------|
+| **Study** | Research study metadata | [🔗 View Schema](https://jsoncrack.com/editor?json=https://raw.githubusercontent.com/diabetes-research/singer-drh-protocol/main/drh-target/python-pkg/src/drh_target/schemas/study.json) |
+| **Participant** | Subject demographics and baseline data | [🔗 View Schema](https://jsoncrack.com/editor?json=https://raw.githubusercontent.com/diabetes-research/singer-drh-protocol/main/drh-target/python-pkg/src/drh_target/schemas/participant.json) |
+| **Investigator** | Principal investigators and co-investigators | [🔗 View Schema](https://jsoncrack.com/editor?json=https://raw.githubusercontent.com/diabetes-research/singer-drh-protocol/main/drh-target/python-pkg/src/drh_target/schemas/investigator.json) |
+| **Author** | Study authors and contributors | [🔗 View Schema](https://jsoncrack.com/editor?json=https://raw.githubusercontent.com/diabetes-research/singer-drh-protocol/main/drh-target/python-pkg/src/drh_target/schemas/author.json) |
+| **Institution** | Research institutions and affiliations | [🔗 View Schema](https://jsoncrack.com/editor?json=https://raw.githubusercontent.com/diabetes-research/singer-drh-protocol/main/drh-target/python-pkg/src/drh_target/schemas/institution.json) |
+| **Lab** | Laboratory information | [🔗 View Schema](https://jsoncrack.com/editor?json=https://raw.githubusercontent.com/diabetes-research/singer-drh-protocol/main/drh-target/python-pkg/src/drh_target/schemas/lab.json) |
+| **Site** | Clinical trial sites | [🔗 View Schema](https://jsoncrack.com/editor?json=https://raw.githubusercontent.com/diabetes-research/singer-drh-protocol/main/drh-target/python-pkg/src/drh_target/schemas/site.json) |
+| **Publication** | Related publications and references | [🔗 View Schema](https://jsoncrack.com/editor?json=https://raw.githubusercontent.com/diabetes-research/singer-drh-protocol/main/drh-target/python-pkg/src/drh_target/schemas/publication.json) |
+
+#### CGM Data Schemas
+
+| Stream | Description | Interactive Visualization |
+|--------|-------------|---------------------------|
+| **CGM File Metadata** | Continuous glucose monitoring file descriptors | [🔗 View Schema](https://jsoncrack.com/editor?json=https://raw.githubusercontent.com/diabetes-research/singer-drh-protocol/main/drh-target/python-pkg/src/drh_target/schemas/cgm_file_metadata.json) |
+| **CGM Tracing** | Raw CGM glucose readings (time-series data) | [🔗 View Schema](https://jsoncrack.com/editor?json=https://raw.githubusercontent.com/diabetes-research/singer-drh-protocol/main/drh-target/python-pkg/src/drh_target/schemas/cgm_tracing.json) |
+
+#### Meal Data Schemas
+
+| Stream | Description | Interactive Visualization |
+|--------|-------------|---------------------------|
+| **Meal File Metadata** | Meal logging file descriptors | [🔗 View Schema](https://jsoncrack.com/editor?json=https://raw.githubusercontent.com/diabetes-research/singer-drh-protocol/main/drh-target/python-pkg/src/drh_target/schemas/meal_file_metadata.json) |
+| **Meal** | Meal composition and timing | [🔗 View Schema](https://jsoncrack.com/editor?json=https://raw.githubusercontent.com/diabetes-research/singer-drh-protocol/main/drh-target/python-pkg/src/drh_target/schemas/meal.json) |
+
+#### Fitness Data Schemas
+
+| Stream | Description | Interactive Visualization |
+|--------|-------------|---------------------------|
+| **Fitness File Metadata** | Physical activity file descriptors | [🔗 View Schema](https://jsoncrack.com/editor?json=https://raw.githubusercontent.com/diabetes-research/singer-drh-protocol/main/drh-target/python-pkg/src/drh_target/schemas/fitness_file_metadata.json) |
+| **Fitness** | Exercise and activity logs | [🔗 View Schema](https://jsoncrack.com/editor?json=https://raw.githubusercontent.com/diabetes-research/singer-drh-protocol/main/drh-target/python-pkg/src/drh_target/schemas/fitness.json) |
+
+#### OpenTelemetry Schemas
+
+Schemas for observability and validation tracking:
+
+| Stream | Description | Interactive Visualization |
+|--------|-------------|---------------------------|
+| **OTel Span** | Distributed trace spans for validation tracking | [🔗 View Schema](https://jsoncrack.com/editor?json=https://raw.githubusercontent.com/diabetes-research/singer-drh-protocol/main/drh-target/python-pkg/src/drh_target/schemas/otel_span.json) |
+| **OTel Log** | Structured log events for validation errors | [🔗 View Schema](https://jsoncrack.com/editor?json=https://raw.githubusercontent.com/diabetes-research/singer-drh-protocol/main/drh-target/python-pkg/src/drh_target/schemas/otel_log.json) |
+| **OTel Metric** | Performance and data quality metrics | [🔗 View Schema](https://jsoncrack.com/editor?json=https://raw.githubusercontent.com/diabetes-research/singer-drh-protocol/main/drh-target/python-pkg/src/drh_target/schemas/otel_metric.json) |
+
+### How to Use the Visualizations
+
+1. **Click a schema link** above to open it in JSON Crack
+2. **Explore the tree structure**:
+   - Click nodes to expand/collapse
+   - Hover over fields to see types and descriptions
+   - Use zoom and pan to navigate large schemas
+3. **Understand relationships**:
+   - Look for `foreign_key` annotations
+   - See which fields are `required` vs. optional
+   - Identify `enum` constraints for categorical data
+4. **Share with collaborators**:
+   - Copy the URL to share visualizations
+   - Links always reflect the latest schema version
+
+### Example: Exploring the Participant Schema
+
+The participant schema includes:
+
+- **Required Fields**: `participant_id`, `study_id`
+- **Demographic Data**: `age`, `gender`, `ethnicity`, `race`
+- **Clinical Data**: `diagnosis_date`, `diagnosis_type`, `diabetes_duration`
+- **Foreign Keys**: `study_id` → `study.study_id`, `site_id` → `site.site_id`
+- **Enum Constraints**: `gender` ∈ {M, F, Other, Unknown}
+
+[**🔗 Explore Participant Schema Interactively**](https://jsoncrack.com/editor?json=https://raw.githubusercontent.com/diabetes-research/singer-drh-protocol/main/drh-target/python-pkg/src/drh_target/schemas/participant.json)
+
+---
+
 ## Data Preparation for Researchers
 
 Medical researchers can prepare their data for the DRH pipeline regardless of the source format. The DRH Singer Protocol is flexible and extensible.
@@ -294,13 +386,13 @@ It will integrate with the DRH ecosystem. However, **each new format requires cu
 
 If you need to process formats other than CSV:
 
-**1: Assess Feasibility**
+**1:Assess Feasibility**
 
 - Can you programmatically read the format in Python?
 - Can you map the source fields to DRH schema fields?
 - Is the data structured or unstructured?
 
-**2: Create a Custom Tap**
+**2:Create a Custom Tap**
 
 - Copy the CSV tap as a template
 - Replace the CSV reading logic with your format's reader
@@ -477,45 +569,65 @@ P003,S001,38,F,01/22/2024
 
 You can then fix the date format and re-run the tap.
 
-### Sample Tap Reference
+## Sample Tap Reference
 
-A complete reference implementation is available in the **drh-edge** repository:
+A complete reference implementation is available in the **drh-edge** repository, providing a blueprint for end-to-end data ingestion.
 
-📦 **Repository**: [spry-drh-edge-platform](https://github.com/diabetes-research/spry-drh-edge-platform)  
-📂 **Tap Location**: `drh-edge-core/singer-tap/tap-simplera_surveilr_singer_.py`
+- **Repository**: [spry-drh-edge-platform](https://github.com/diabetes-research/spry-drh-edge-platform)
+- **Tap Location**: `drh-edge-core/singer-tap/tap-simplera_surveilr_singer_.py`
 
-This sample tap demonstrates:
+### **Core Capabilities**
 
-- Reading multiple CSV files from a directory
-- Validating against all DRH schemas
-- Emitting OpenTelemetry traces, logs, and metrics
-- Handling complex validation scenarios (CGM integrity, cross-file consistency)
-- Auto-installing dependencies (Python venv, drh-target package)
+This sample tap demonstrates the full integration of the protocol:
 
-#### Using the Sample Tap
+- **Multi-File Processing**: Reads multiple CSV files from a directory.
+- **Comprehensive Validation**: Validates against all DRH schemas.
+- **Full Observability**: Emits OpenTelemetry traces, logs, and metrics.
+- **Advanced Logic**: Handles complex scenarios like CGM integrity and cross-file consistency.
+- **Automated Environment**: Auto-installs dependencies via Python venv and the `drh-target` package.
+
+---
+
+#### **Using the Sample Tap**
+
+To implement the tap, follow these steps to configure your environment and run the pipeline. Detailed documentation for the orchestration layer can be found in the [Spry DRH Edge Platform](https://github.com/diabetes-research/spry-drh-edge-platform) repository.
+
+**1.Clone and Setup**
 
 ```bash
 # Clone the repository
 git clone https://github.com/diabetes-research/spry-drh-edge-platform.git
 cd spry-drh-edge-platform/drh-edge-core
 
-# Set environment variables by using a tool(SPRY)
+```
+
+**2.Configure Your Environment**
+Modify the existing Markdown files to match your data requirements:
+
+- **Markdown Update**: Copy any existing Markdown and modify the data output paths in the bash blocks.
+- **UI/SQL Configuration**: Modify the SQL required for data display in the SQLPage integration.
+- **Environment Variables**: Locate the `envrc` block within the Markdown file to define your environment context.
+
+**3. Execution**
+Use the **SPRY** tool to prepare your environment and execute the tap:
+
+```bash
+# Set environment variables
 export TENANT_ID="MY_LAB"
 export TENANT_NAME="My Research Lab"
 export STUDY_DATA_PATH="path/to/your/csvs"
 
-# execute the command 
+# Prepare the environment using Spry tasks
 spry rb task prepare-env drh-simplera-spry.md
 direnv allow
 
-# Run the tap using python3(outputs Singer messages to stdout)
+# Run the tap (outputs Singer messages to stdout)
 python3 singer-tap/tap-simplera.surveilr\[singer]\.py
 
-# Or pipe directly to a target (e.g., a text file)
+# Or pipe directly to a target file for verification
 python3 singer-tap/tap-simplera.surveilr\[singer]\.py > result_simplera.txt
-```
 
-### Best Practices for Data Preparation
+```
 
 When preparing data for DRH ingestion:
 
@@ -784,116 +896,18 @@ loader.emit_state({
 })
 ```
 
----
-
-## Interactive Schema Visualization
-
-The DRH Protocol schemas are complex, with nested structures and relationships. We provide **interactive visualizations** using [JSON Crack](https://jsoncrack.com/) to help researchers explore schema definitions visually.
-
-### What is JSON Crack?
-
-JSON Crack is an open-source online tool that renders JSON schemas as interactive tree-graph diagrams. You can:
-
-- ✅ Expand/collapse nested structures  
-- ✅ See field types and constraints at a glance  
-- ✅ Navigate relationships between schemas  
-- ✅ Export visualizations as PNG, JPEG, or SVG  
-- ✅ Share links with collaborators  
-
-### Magic Links to Schema Visualizations
-
-Click any link below to open an **interactive, dynamic visualization** of the schema. These links load schemas directly from GitHub's raw content, so they automatically update when schema files change.
-
-> **Note**: Links open JSON Crack with the schema pre-loaded. If a visualization doesn't appear, the schema file may not exist yet in the repository, or you may need to manually paste the raw GitHub URL into [jsoncrack.com/editor](https://jsoncrack.com/editor).
-
-#### Core Research Data Schemas
-
-| Stream | Description | Interactive Visualization |
-|--------|-------------|---------------------------|
-| **Study** | Research study metadata | [🔗 View Schema](https://jsoncrack.com/editor?json=https://raw.githubusercontent.com/diabetes-research/singer-drh-protocol/main/drh-target/python-pkg/src/drh_target/schemas/study.json) |
-| **Participant** | Subject demographics and baseline data | [🔗 View Schema](https://jsoncrack.com/editor?json=https://raw.githubusercontent.com/diabetes-research/singer-drh-protocol/main/drh-target/python-pkg/src/drh_target/schemas/participant.json) |
-| **Investigator** | Principal investigators and co-investigators | [🔗 View Schema](https://jsoncrack.com/editor?json=https://raw.githubusercontent.com/diabetes-research/singer-drh-protocol/main/drh-target/python-pkg/src/drh_target/schemas/investigator.json) |
-| **Author** | Study authors and contributors | [🔗 View Schema](https://jsoncrack.com/editor?json=https://raw.githubusercontent.com/diabetes-research/singer-drh-protocol/main/drh-target/python-pkg/src/drh_target/schemas/author.json) |
-| **Institution** | Research institutions and affiliations | [🔗 View Schema](https://jsoncrack.com/editor?json=https://raw.githubusercontent.com/diabetes-research/singer-drh-protocol/main/drh-target/python-pkg/src/drh_target/schemas/institution.json) |
-| **Lab** | Laboratory information | [🔗 View Schema](https://jsoncrack.com/editor?json=https://raw.githubusercontent.com/diabetes-research/singer-drh-protocol/main/drh-target/python-pkg/src/drh_target/schemas/lab.json) |
-| **Site** | Clinical trial sites | [🔗 View Schema](https://jsoncrack.com/editor?json=https://raw.githubusercontent.com/diabetes-research/singer-drh-protocol/main/drh-target/python-pkg/src/drh_target/schemas/site.json) |
-| **Publication** | Related publications and references | [🔗 View Schema](https://jsoncrack.com/editor?json=https://raw.githubusercontent.com/diabetes-research/singer-drh-protocol/main/drh-target/python-pkg/src/drh_target/schemas/publication.json) |
-
-#### CGM Data Schemas
-
-| Stream | Description | Interactive Visualization |
-|--------|-------------|---------------------------|
-| **CGM File Metadata** | Continuous glucose monitoring file descriptors | [🔗 View Schema](https://jsoncrack.com/editor?json=https://raw.githubusercontent.com/diabetes-research/singer-drh-protocol/main/drh-target/python-pkg/src/drh_target/schemas/cgm_file_metadata.json) |
-| **CGM Tracing** | Raw CGM glucose readings (time-series data) | [🔗 View Schema](https://jsoncrack.com/editor?json=https://raw.githubusercontent.com/diabetes-research/singer-drh-protocol/main/drh-target/python-pkg/src/drh_target/schemas/cgm_tracing.json) |
-
-#### Meal Data Schemas
-
-| Stream | Description | Interactive Visualization |
-|--------|-------------|---------------------------|
-| **Meal File Metadata** | Meal logging file descriptors | [🔗 View Schema](https://jsoncrack.com/editor?json=https://raw.githubusercontent.com/diabetes-research/singer-drh-protocol/main/drh-target/python-pkg/src/drh_target/schemas/meal_file_metadata.json) |
-| **Meal** | Meal composition and timing | [🔗 View Schema](https://jsoncrack.com/editor?json=https://raw.githubusercontent.com/diabetes-research/singer-drh-protocol/main/drh-target/python-pkg/src/drh_target/schemas/meal.json) |
-
-#### Fitness Data Schemas
-
-| Stream | Description | Interactive Visualization |
-|--------|-------------|---------------------------|
-| **Fitness File Metadata** | Physical activity file descriptors | [🔗 View Schema](https://jsoncrack.com/editor?json=https://raw.githubusercontent.com/diabetes-research/singer-drh-protocol/main/drh-target/python-pkg/src/drh_target/schemas/fitness_file_metadata.json) |
-| **Fitness** | Exercise and activity logs | [🔗 View Schema](https://jsoncrack.com/editor?json=https://raw.githubusercontent.com/diabetes-research/singer-drh-protocol/main/drh-target/python-pkg/src/drh_target/schemas/fitness.json) |
-
-#### OpenTelemetry Schemas
-
-Schemas for observability and validation tracking:
-
-| Stream | Description | Interactive Visualization |
-|--------|-------------|---------------------------|
-| **OTel Span** | Distributed trace spans for validation tracking | [🔗 View Schema](https://jsoncrack.com/editor?json=https://raw.githubusercontent.com/diabetes-research/singer-drh-protocol/main/drh-target/python-pkg/src/drh_target/schemas/otel_span.json) |
-| **OTel Log** | Structured log events for validation errors | [🔗 View Schema](https://jsoncrack.com/editor?json=https://raw.githubusercontent.com/diabetes-research/singer-drh-protocol/main/drh-target/python-pkg/src/drh_target/schemas/otel_log.json) |
-| **OTel Metric** | Performance and data quality metrics | [🔗 View Schema](https://jsoncrack.com/editor?json=https://raw.githubusercontent.com/diabetes-research/singer-drh-protocol/main/drh-target/python-pkg/src/drh_target/schemas/otel_metric.json) |
-
-### How to Use the Visualizations
-
-1. **Click a schema link** above to open it in JSON Crack
-2. **Explore the tree structure**:
-   - Click nodes to expand/collapse
-   - Hover over fields to see types and descriptions
-   - Use zoom and pan to navigate large schemas
-3. **Understand relationships**:
-   - Look for `foreign_key` annotations
-   - See which fields are `required` vs. optional
-   - Identify `enum` constraints for categorical data
-4. **Share with collaborators**:
-   - Copy the URL to share visualizations
-   - Links always reflect the latest schema version
-
-### Example: Exploring the Participant Schema
-
-The participant schema includes:
-
-- **Required Fields**: `participant_id`, `study_id`
-- **Demographic Data**: `age`, `gender`, `ethnicity`, `race`
-- **Clinical Data**: `diagnosis_date`, `diagnosis_type`, `diabetes_duration`
-- **Foreign Keys**: `study_id` → `study.study_id`, `site_id` → `site.site_id`
-- **Enum Constraints**: `gender` ∈ {M, F, Other, Unknown}
-
-[**🔗 Explore Participant Schema Interactively**](https://jsoncrack.com/editor?json=https://raw.githubusercontent.com/diabetes-research/singer-drh-protocol/main/drh-target/python-pkg/src/drh_target/schemas/participant.json)
-
----
-
 ## Support and Contact
 
 - **Documentation**: [DRH Platform Docs](https://drh.diabetestechnology.org/)
 - **Implementation Example**: [spry-drh-edge-platform](https://github.com/diabetes-research/spry-drh-edge-platform)
-
 ---
 
 ## Related Projects
 
 - **DRH Edge Platform**: Complete ETL pipeline with Spry orchestration  
   [github.com/diabetes-research/spry-drh-edge-platform](https://github.com/diabetes-research/spry-drh-edge-platform)
-
 - **Singer Specification**: Official Singer protocol documentation  
   [github.com/singer-io/getting-started](https://github.com/singer-io/getting-started)
-
 - **OpenTelemetry**: Observability framework  
   [opentelemetry.io](https://opentelemetry.io/)
 
