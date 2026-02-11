@@ -900,6 +900,7 @@ loader.emit_state({
 
 - **Documentation**: [DRH Platform Docs](https://drh.diabetestechnology.org/)
 - **Implementation Example**: [spry-drh-edge-platform](https://github.com/diabetes-research/spry-drh-edge-platform)
+
 ---
 
 ## Related Projects
@@ -913,6 +914,6 @@ loader.emit_state({
 
 ---
 
-**Version**: 1.0  
-**Last Updated**: February 2026  
-**Maintainers**: DRH Netspective Team
+## License
+
+This project is licensed under the GNU General Public License v3.0. See the [LICENSE](/LICENSE) file for details.
